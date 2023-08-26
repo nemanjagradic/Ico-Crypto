@@ -1,0 +1,168 @@
+nav {
+  padding: 20px 0;
+  margin: 0 auto !important;
+  transition: 0.2s;
+  width: 1250px;
+}
+
+.home {
+  background: #2c0853;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  background: #1b0c33;
+  width: 100%;
+  padding: 20px 10%;
+  z-index: 2;
+}
+
+ul {
+  margin-bottom: 0 !important;
+}
+
+.nav-list {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-list li a {
+  list-style: none;
+  color: #f0f0f0;
+  cursor: pointer;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav-list li a:link,
+.nav-list li a:visited {
+  color: #f0f0f0;
+}
+
+.nav-link svg {
+  font-size: 16px;
+}
+
+.logo-img {
+  width: 180px;
+  height: 50px;
+}
+
+.logo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nav-icons {
+  float: right;
+  font-size: 24px;
+  color: #f0f0f0;
+}
+
+.nav-icons svg {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.nav-icons svg:last-child {
+  margin-right: 0 !important;
+}
+
+.nav-list li:hover a {
+  background: linear-gradient(45deg, rgba(201, 128, 215, 1), rgb(1, 138, 166));
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-icons svg:hover {
+  color: rgba(201, 128, 215, 1);
+}
+
+.resposnive-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background: rgb(45, 0, 67);
+  transition: 0.5s;
+}
+
+.resposnive-menu ul {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.resposnive-menu ul li {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.resposnive-menu ul li a {
+  font-size: 28px !important;
+}
+
+.close-btn {
+  color: #f0f0f0;
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  font-size: 28px;
+}
+
+.menu-icon {
+  display: none;
+  color: #f0f0f0;
+  font-size: 26px;
+  float: right;
+}
+
+@media screen and (max-width: 1280px) {
+  nav .nav-list {
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .sticky {
+    padding: 20px 5%;
+  }
+}
+@media screen and (max-width: 1020px) {
+  .nav-link {
+    font-size: 16px !important;
+  }
+  .nav-icons {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .nav-list {
+    gap: 25px;
+  }
+}
+@media screen and (max-width: 840px) {
+  .nav-col:nth-child(2),
+  .nav-col .nav-icons {
+    display: none;
+  }
+  .nav-col:first-child {
+    flex: 70%;
+  }
+  .nav-col:nth-child(3) {
+    flex-basis: 30%;
+  }
+  .menu-icon {
+    display: block;
+  }
+}

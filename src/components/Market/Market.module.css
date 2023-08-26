@@ -1,0 +1,50 @@
+.market {
+  padding: 30px;
+  background: #070046;
+  color: #f0f0f0;
+  overflow-x: auto;
+}
+
+.market-content {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.crypto-items-info {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(45deg, #0d0082 0%, #4c0f8d 55%);
+  height: 50px;
+  padding: 0 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.crypto-items-info p {
+  flex-basis: 20%;
+  margin-bottom: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.crypto-items-info p:first-child {
+  flex-basis: 40%;
+}
+
+.crypto-items-info p:last-child {
+  text-align: right;
+}
+
+@media screen and (max-width: 1280px) {
+  .market-content {
+    width: 90% !important;
+  }
+}
+@media screen and (max-width: 780px) {
+  .crypto-items-info p {
+    font-size: 16px;
+  }
+  .market-content {
+    width: 600px !important;
+  }
+}

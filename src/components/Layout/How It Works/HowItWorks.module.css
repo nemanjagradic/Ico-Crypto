@@ -1,0 +1,135 @@
+.how-it-works {
+  background: #070046;
+  color: #f0f0f0;
+  padding-top: 100px;
+}
+
+.how-it-works h1 {
+  font-size: 60px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.works-items {
+  flex-wrap: wrap !important;
+}
+
+.works-item {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  background: #d8d8d82a;
+  text-align: center;
+  padding: 30px !important;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.works-item:hover {
+  box-shadow: 0 5px 10px #d8d8d82d, 0 13px 15px #d8d8d81d, 0 20px 20px #d8d8d811;
+}
+
+.works-connect {
+  position: absolute;
+  top: 30%;
+  right: -30%;
+  width: 130px;
+  height: 20px;
+}
+
+.works-connect img {
+  width: 100%;
+  height: 100%;
+}
+
+.works-img {
+  width: 220px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.works-img img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1280px) {
+  .works-item {
+    width: 85%;
+    padding: 15px !important;
+  }
+  .works-img {
+    width: 180px;
+    height: 180px;
+  }
+  .works-connect {
+    width: 110px;
+    right: -33%;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .works-item h3 {
+    font-size: 24px;
+  }
+  .works-item p {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 1020px) {
+  .works-item h3 {
+    font-size: 22px;
+  }
+  .works-connect {
+    width: 80px;
+    right: -29%;
+  }
+}
+@media screen and (max-width: 980px) {
+  .works-img {
+    width: 150px;
+    height: 150px;
+  }
+  .works-items .works-col-style {
+    flex-basis: 48% !important;
+    margin-top: 20px;
+  }
+  .works-connect {
+    width: 140px;
+    right: -34%;
+  }
+  .works-items .works-col-style:nth-child(2) .works-connect {
+    display: none;
+  }
+}
+@media screen and (max-width: 780px) {
+  .works-connect {
+    right: -40%;
+  }
+}
+@media screen and (max-width: 620px) {
+  .how-it-works h1 {
+    font-size: 44px;
+  }
+  .works-connect {
+    right: -46%;
+  }
+}
+@media screen and (max-width: 540px) {
+  .works-items .works-col-style {
+    flex-basis: 80% !important;
+    margin: 20px auto;
+  }
+  .works-items .works-col-style:nth-child(2) .works-connect {
+    display: block;
+  }
+  .works-connect {
+    right: 0;
+    left: 0;
+    top: 105%;
+    width: 80px;
+    margin: 0 auto;
+    transform: rotate(90deg);
+  }
+}

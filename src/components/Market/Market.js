@@ -5,7 +5,7 @@ import Pagination from "./Pagination/Pagination";
 import useFetchCoins from "../../hooks/useFetchedCoins";
 
 const Market = () => {
-  const { coins, loading } = useFetchCoins([]);
+  const { coins, loading, error } = useFetchCoins();
   const [currentPage, setCurrentPage] = useState(1);
   const [active, setActive] = useState(1);
   const [numberPerPage] = useState(10);
@@ -31,7 +31,7 @@ const Market = () => {
               <p>24h Change</p>
               <p>Market Cap</p>
             </div>
-            <MarketItems coins={currentCoins} loading={loading} />
+            <MarketItems coins={currentCoins} loading={loading} error={error} />
           </div>
         </div>
       </div>

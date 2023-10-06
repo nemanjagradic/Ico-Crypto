@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import useFetchCoins from "../../../hooks/useFetchedCoins";
 
 const TopCryptoCurrencies = () => {
-  const { coins, loading } = useFetchCoins([]);
+  const { coins, loading, error } = useFetchCoins();
   return (
     <div className={classes["top-crypto-currencies"]}>
       <div className="container">
@@ -15,7 +15,12 @@ const TopCryptoCurrencies = () => {
         </h1>
         <h2>Most popular crypto right now</h2>
         <div className={`row ${classes["top-crypto-items"]}`}>
-          {loading && <Spinner />}
+          {loading && !error && <Spinner />}
+          {error && (
+            <p style={{ textAlign: "center", marginTop: "30px" }}>
+              Failed to fetch! Too many requests.
+            </p>
+          )}
           {coins.slice(0, 4).map((topCoin) => {
             return (
               <div

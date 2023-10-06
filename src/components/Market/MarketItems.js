@@ -2,13 +2,17 @@ import { Link } from "react-router-dom";
 import Spinner from "../Spinner/Spinner";
 import classes from "./MarketItems.module.css";
 
-const MarketItems = ({ coins, loading }) => {
-  if (loading) {
+const MarketItems = ({ coins, loading, error }) => {
+  if (loading && !error) {
     return <Spinner />;
   }
-
   return (
     <div className={classes["crypto-all-items"]}>
+      {error && (
+        <p style={{ textAlign: "center", marginTop: "30px" }}>
+          Failed to fetch! Too many requests.
+        </p>
+      )}
       {coins.map((coin) => {
         const marketCap = new Intl.NumberFormat("en-us", {
           style: "currency",

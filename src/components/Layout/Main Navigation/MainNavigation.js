@@ -39,9 +39,17 @@ const MainNavigation = () => {
         <ul className={classes["nav-list"]}>
           {!currencyId ? (
             <li>
-              <Link to="/" className={classes["nav-link"]} onClick={closeNav}>
+              <ScrollLink
+                to="introduction"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={300}
+                className={classes["nav-link"]}
+                onClick={closeNav}
+              >
                 Home
-              </Link>
+              </ScrollLink>
             </li>
           ) : (
             <li>
@@ -84,9 +92,16 @@ const MainNavigation = () => {
             <ul className={classes["nav-list"]}>
               {!currencyId ? (
                 <li>
-                  <Link to="/" className={classes["nav-link"]}>
+                  <ScrollLink
+                    to="introduction"
+                    spy={true}
+                    smooth={true}
+                    offset={-50}
+                    duration={300}
+                    className={classes["nav-link"]}
+                  >
                     Home
-                  </Link>
+                  </ScrollLink>
                 </li>
               ) : (
                 <li>

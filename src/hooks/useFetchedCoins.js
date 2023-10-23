@@ -21,6 +21,7 @@ function useFetchCoins() {
 
     fetchCoins().catch((err) => {
       setError(true);
+      setLoading(false);
     });
   }, []);
 

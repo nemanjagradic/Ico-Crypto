@@ -12,7 +12,11 @@ const IntroductionLayout = () => {
   const introduction = useRef();
   useStickyNav(introduction.current, { root: null, threshold: 0.5 });
   return (
-    <div className={classes["introduction"]} ref={introduction}>
+    <div
+      id="introduction"
+      className={classes["introduction"]}
+      ref={introduction}
+    >
       <div className="container row align-items-center mx-auto">
         <div className={`col-md-6 ${classes["introduction-content"]}`}>
           <h1>Buy & sell crypto easily</h1>

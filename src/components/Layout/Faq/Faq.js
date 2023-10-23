@@ -40,7 +40,11 @@ const Faq = () => {
   const [active, setActive] = useState(null);
 
   const accorditionHandler = (i) => {
-    setActive(i);
+    if (active === i) {
+      setActive(null);
+    } else {
+      setActive(i);
+    }
   };
   return (
     <div className={classes.faq} id="FAQ">

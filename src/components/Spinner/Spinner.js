@@ -1,11 +1,7 @@
 import classes from "./Spinner.module.css";
 
 const Spinner = () => {
-  return (
-    <div className={classes["spinner-container"]}>
-      <div className={classes["spinner-5"]}></div>
-    </div>
-  );
+  return <div className={classes["spinner-5"]}></div>;
 };
 
 export default Spinner;

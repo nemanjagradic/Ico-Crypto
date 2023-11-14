@@ -33,7 +33,7 @@ const Footer = () => {
               </li>
               <li>
                 <ScrollLink
-                  to="market"
+                  to="Market"
                   spy={true}
                   smooth={true}
                   offset={-50}
@@ -45,7 +45,7 @@ const Footer = () => {
               </li>
               <li>
                 <ScrollLink
-                  to="how-it-works"
+                  to="How-It-Works"
                   spy={true}
                   smooth={true}
                   offset={-50}
@@ -57,7 +57,7 @@ const Footer = () => {
               </li>
               <li>
                 <ScrollLink
-                  to="faq"
+                  to="Faq"
                   spy={true}
                   smooth={true}
                   offset={-50}

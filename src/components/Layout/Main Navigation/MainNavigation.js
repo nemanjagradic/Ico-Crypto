@@ -44,7 +44,7 @@ const MainNavigation = () => {
                 smooth={true}
                 offset={-50}
                 delay={250}
-                duration={300}
+                duration={500}
                 className={classes["nav-link"]}
                 onClick={closeNav}
               >
@@ -102,7 +102,7 @@ const MainNavigation = () => {
                     smooth={true}
                     offset={-50}
                     delay={250}
-                    duration={300}
+                    duration={500}
                     className={classes["nav-link"]}
                   >
                     Home
@@ -124,7 +124,7 @@ const MainNavigation = () => {
                         spy={true}
                         smooth={true}
                         offset={-50}
-                        duration={300}
+                        duration={500}
                         delay={250}
                         className={classes["nav-link"]}
                         onClick={closeNav}

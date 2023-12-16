@@ -1,4 +1,4 @@
-import classes from "./Pagination.module.css";
+import classes from "./Pagination.module.scss";
 import { Link as ScrollLink } from "react-scroll";
 
 const Pagination = ({ totalCoins, numberPerPage, paginate, active }) => {
@@ -18,8 +18,8 @@ const Pagination = ({ totalCoins, numberPerPage, paginate, active }) => {
             offset={-100}
             duration={100}
             onClick={paginate.bind(null, number)}
-            className={`${classes["pagination-btn"]} ${
-              active === number ? classes["btn-active"] : ""
+            className={`${classes["pagination__btn"]} ${
+              active === number ? classes["pagination__active"] : ""
             }`}
           >
             <span>{number}</span>

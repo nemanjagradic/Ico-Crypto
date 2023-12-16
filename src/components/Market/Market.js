@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import classes from "./Market.module.css";
+import classes from "./Market.module.scss";
 import MarketItems from "./MarketItems";
 import Pagination from "./Pagination/Pagination";
 import useFetchCoins from "../../hooks/useFetchedCoins";
@@ -23,16 +23,14 @@ const Market = () => {
   return (
     <>
       <div className={classes.market} id="Market">
-        <div className={classes["market-content"]}>
-          <div className={classes["crypto-items"]}>
-            <div className={classes["crypto-items-info"]}>
-              <p>Coin</p>
-              <p>Price</p>
-              <p>24h Change</p>
-              <p>Market Cap</p>
-            </div>
-            <MarketItems coins={currentCoins} loading={loading} error={error} />
+        <div className={classes["market__content"]}>
+          <div className={classes["market-items-info"]}>
+            <p>Coin</p>
+            <p>Price</p>
+            <p>24h Change</p>
+            <p>Market Cap</p>
           </div>
+          <MarketItems coins={currentCoins} loading={loading} error={error} />
         </div>
       </div>
       <Pagination

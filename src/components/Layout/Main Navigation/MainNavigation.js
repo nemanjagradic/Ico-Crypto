@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import classes from "./MainNavigation.module.css";
+import classes from "./MainNavigation.module.scss";
 import {
   faXmark,
   faBars,
@@ -13,7 +13,6 @@ import {
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.css";
 import { useState } from "react";
 
 const scrollLinks = ["Market", "How It Works", "FAQ"];
@@ -36,14 +35,15 @@ const MainNavigation = () => {
         <div className={classes["close-btn"]} onClick={closeNav}>
           <FontAwesomeIcon icon={faXmark} />
         </div>
-        <ul className={classes["nav-list"]}>
+        <ul className={classes["responsive-menu__list"]}>
           {!currencyId ? (
-            <li>
+            <li className={classes["responsive-menu__list--item"]}>
               <ScrollLink
-                to="introduction"
+                to="Home"
                 spy={true}
                 smooth={true}
                 offset={-50}
+                delay={250}
                 duration={300}
                 className={classes["nav-link"]}
                 onClick={closeNav}
@@ -52,7 +52,7 @@ const MainNavigation = () => {
               </ScrollLink>
             </li>
           ) : (
-            <li>
+            <li className={classes["responsive-menu__list--item"]}>
               <Link to="/" className={classes["nav-link"]}>
                 <FontAwesomeIcon icon={faChevronLeft} /> Home
               </Link>
@@ -61,13 +61,17 @@ const MainNavigation = () => {
           {scrollLinks.map((link) => {
             return (
               !currencyId && (
-                <li key={link}>
+                <li
+                  className={classes["responsive-menu__list--item"]}
+                  key={link}
+                >
                   <ScrollLink
                     to={link.replaceAll(" ", "-")}
                     spy={true}
                     smooth={true}
                     offset={-50}
-                    duration={300}
+                    delay={250}
+                    duration={500}
                     className={classes["nav-link"]}
                     onClick={closeNav}
                   >
@@ -79,24 +83,25 @@ const MainNavigation = () => {
           })}
         </ul>
       </div>
-      <div className={`${classes.home} ${classes["nav-introduction"]}`}>
-        <nav className="container row align-items-center">
-          <div className={`col-md-4 ${classes["nav-col"]}`}>
+      <div id="Home" className={`${classes.home}`}>
+        <nav className={`container ${classes.nav}`}>
+          <div className={`${classes["nav__col"]}`}>
             <Link to="/">
-              <div className={classes["logo-img"]}>
+              <div className={classes["nav__logo"]}>
                 <img src="/img/logo-img.png" alt="" />
               </div>
             </Link>
           </div>
-          <div className={`col-md-5 ${classes["nav-col"]}`}>
-            <ul className={classes["nav-list"]}>
+          <div className={`${classes["nav__col"]}`}>
+            <ul className={classes["nav__list"]}>
               {!currencyId ? (
-                <li>
+                <li className="nav__list--item">
                   <ScrollLink
-                    to="introduction"
+                    to="Home"
                     spy={true}
                     smooth={true}
                     offset={-50}
+                    delay={250}
                     duration={300}
                     className={classes["nav-link"]}
                   >
@@ -120,6 +125,7 @@ const MainNavigation = () => {
                         smooth={true}
                         offset={-50}
                         duration={300}
+                        delay={250}
                         className={classes["nav-link"]}
                         onClick={closeNav}
                       >
@@ -131,11 +137,11 @@ const MainNavigation = () => {
               })}
             </ul>
           </div>
-          <div className={`col-md-3 ${classes["nav-col"]}`}>
+          <div className={`${classes["nav__col"]}`}>
             <div className={classes["menu-icon"]} onClick={openNav}>
               <FontAwesomeIcon icon={faBars} />
             </div>
-            <div className={classes["nav-icons"]}>
+            <div className={classes["nav__icons"]}>
               <FontAwesomeIcon icon={faFacebook} />
               <FontAwesomeIcon icon={faInstagram} />
               <FontAwesomeIcon icon={faDiscord} />

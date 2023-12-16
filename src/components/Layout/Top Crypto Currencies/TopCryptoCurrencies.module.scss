@@ -1,0 +1,130 @@
+@import "../../../variables.scss";
+
+.top-crypto-currencies {
+  padding-top: 70px;
+  text-align: center;
+  background: #070046;
+  color: $lightWhite;
+
+  h1 {
+    font-size: 75px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    span {
+      @include bg-text-color(#c980d7, #018aa6);
+      font-size: 80px;
+    }
+  }
+
+  h2 {
+    margin-top: 30px;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    @include bg-text-color($lightWhite, $lightWhite);
+
+    &:hover {
+      @include bg-text-color(#c980d7, #018aa6);
+    }
+  }
+}
+
+.top-crypto-items {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .top-crypto-item {
+    flex: 1;
+
+    a {
+      text-decoration: none;
+      color: $lightWhite;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 28px;
+      margin: 10px 10px 10px 0;
+
+      span {
+        margin-left: 10px;
+
+        &.positive {
+          color: $positive;
+          font-size: 24px;
+          font-weight: bold;
+        }
+
+        &.negative {
+          color: $negative;
+          font-size: 24px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    p {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    &__image {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@include media-large {
+  .top-crypto-currencies {
+    h1 {
+      font-size: 56px;
+
+      span {
+        font-size: 56px;
+      }
+    }
+    .top-crypto-item {
+      flex-basis: 45%;
+      h3 {
+        font-size: 22px;
+
+        span {
+          font-size: 22px;
+        }
+      }
+
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@include media-small {
+  .top-crypto-currencies {
+    h1 {
+      font-size: 44px;
+
+      span {
+        font-size: 44px;
+      }
+    }
+    h2 {
+      font-size: 28px;
+    }
+
+    .top-crypto-item {
+      flex-basis: 100%;
+    }
+  }
+}

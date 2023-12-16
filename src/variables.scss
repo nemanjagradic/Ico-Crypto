@@ -1,0 +1,49 @@
+$lightWhite: #f0f0f0;
+$positive: #3cef3c;
+$negative: #ff4444;
+
+@mixin media-large {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-medium {
+  @media screen and (max-width: 790px) {
+    @content;
+  }
+}
+
+@mixin media-small {
+  @media screen and (max-width: 530px) {
+    @content;
+  }
+}
+
+@mixin media-extrasmall {
+  @media screen and (max-width: 430px) {
+    @content;
+  }
+}
+
+@mixin bg-text-color($color1, $color2) {
+  background: linear-gradient(to right, $color1, $color2);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  transition: color 1s ease-in-out;
+  animation: background-move 1.5s ease-in-out infinite;
+}
+
+@keyframes background-move {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}

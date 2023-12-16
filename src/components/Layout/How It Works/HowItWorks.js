@@ -1,4 +1,4 @@
-import classes from "./HowItWorks.module.css";
+import classes from "./HowItWorks.module.scss";
 
 const howItWorksArray = [
   {
@@ -32,30 +32,23 @@ const howItWorksArray = [
 
 const HowItWorks = () => {
   return (
-    <div className={classes["how-it-works"]} id="How-It-Works">
+    <div className={classes["works"]} id="How-It-Works">
       <div className="container">
         <h1>How it works</h1>
-        <div
-          className={`d-flex justify-content between ${classes["works-items"]}`}
-        >
+        <div className={classes["works__items"]}>
           {howItWorksArray.map((item) => {
             return (
-              <div
-                key={item.step}
-                className={`col-md-3 ${classes["works-col-style"]}`}
-              >
-                <div className={classes["works-item"]}>
-                  {item.connect && (
-                    <div className={classes["works-connect"]}>
-                      <img src={item.connect} alt="" />
-                    </div>
-                  )}
-                  <div className={classes["works-img"]}>
-                    <img src={item.image} alt="" />
+              <div className={classes["works-item"]} key={item.step}>
+                {item.connect && (
+                  <div className={classes["works-item__connect"]}>
+                    <img src={item.connect} alt="" />
                   </div>
-                  <h3>{item.step}</h3>
-                  <p>{item.description}</p>
+                )}
+                <div className={classes["works-item__img"]}>
+                  <img src={item.image} alt="" />
                 </div>
+                <h3>{item.step}</h3>
+                <p>{item.description}</p>
               </div>
             );
           })}

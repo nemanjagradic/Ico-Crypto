@@ -8,19 +8,21 @@
   animation: s5 1s infinite linear;
   margin: 30px auto;
   padding: 0 !important;
-}
-.spinner-5::before,
-.spinner-5::after {
-  content: "";
-  grid-area: 1/1;
-  margin: 2px;
-  border: inherit;
-  border-radius: 50%;
-  animation: s5 2s infinite;
-}
-.spinner-5::after {
-  margin: 8px;
-  animation-duration: 3s;
+
+  &::before,
+  &::after {
+    content: "";
+    grid-area: 1/1;
+    margin: 2px;
+    border: inherit;
+    border-radius: 50%;
+    animation: s5 2s infinite;
+  }
+
+  &::after {
+    margin: 8px;
+    animation-duration: 3s;
+  }
 }
 
 .crypto-all-items .spinner-5 {

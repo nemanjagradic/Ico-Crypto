@@ -1,0 +1,137 @@
+@import "../../../variables.scss";
+
+.coin-details {
+  color: $lightWhite;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  background: linear-gradient(#2c0853 45%, #070046 100%);
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.coin-main {
+  flex-basis: 35%;
+
+  h1 {
+    font-family: "Prompt", sans-serif;
+    font-size: 42px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 30px;
+    @include bg-text-color(#c980d7, #018aa6);
+  }
+
+  &__img {
+    margin: 0 auto;
+    width: 260px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.coin-desc {
+  flex: 1;
+  font-size: 20px;
+  height: 350px;
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 26px;
+    margin-bottom: 20px;
+
+    a {
+      text-decoration: none;
+      color: $lightWhite;
+    }
+
+    &__bigP {
+      position: relative;
+      font-size: 20px;
+      line-height: 32px;
+      height: 350px;
+      margin: 0 auto;
+      overflow-y: scroll;
+      z-index: 10;
+    }
+  }
+}
+
+.positive-pr {
+  color: $positive;
+}
+
+.positive {
+  color: $positive;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.negative {
+  color: $negative;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+@include media-large {
+  .coin-details {
+    padding-top: 40px;
+
+    &__row {
+      justify-content: center;
+    }
+  }
+
+  .coin-desc {
+    &__info {
+      font-size: 24px;
+
+      p {
+        flex-basis: 50%;
+        margin-bottom: 15px;
+      }
+
+      &__bigP {
+        font-size: 18px;
+      }
+    }
+  }
+  .coin-main {
+    &__img {
+      width: 230px;
+      height: 230px;
+    }
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .coin-main {
+    flex-basis: 100%;
+  }
+  .coin-desc {
+    flex-basis: 100%;
+    margin-top: 30px;
+  }
+}
+
+@include media-small {
+  .coin-desc {
+    &__info {
+      p {
+        font-size: 18px;
+        span {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

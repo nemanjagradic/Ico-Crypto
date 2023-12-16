@@ -1,5 +1,5 @@
-import classes from "./CurrencyDetails.module.css";
-import navClasses from "../Main Navigation/MainNavigation.module.css";
+import classes from "./CurrencyDetails.module.scss";
+import navClasses from "../Main Navigation/MainNavigation.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
@@ -13,8 +13,8 @@ const CurrencyDetails = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    const nav = document.querySelector("nav");
-    nav.classList.remove(navClasses.sticky);
+    const nav = document.querySelector(`.${navClasses.nav}`);
+    nav.classList.remove(navClasses["nav__sticky"]);
     nav.classList.add("container");
   }, []);
 
@@ -43,7 +43,7 @@ const CurrencyDetails = () => {
   }
 
   return (
-    <div className={classes["coin-section"]}>
+    <div className={classes["coin-details"]}>
       {loading && !error && <Spinner />}
       {error && (
         <p style={{ textAlign: "center", marginTop: "30px" }}>
@@ -51,18 +51,16 @@ const CurrencyDetails = () => {
         </p>
       )}
       {currentCoin && (
-        <div className={`container ${classes["coin"]}`}>
-          <div className="row">
-            <div className={`col-md-4 ${classes["coin-main"]}`}>
+        <div className="container">
+          <div className={classes["coin-details__row"]}>
+            <div className={classes["coin-main"]}>
               <h1>{currentCoin.name}</h1>
-              <div className={classes["coin-img"]}>
+              <div className={classes["coin-main__img"]}>
                 <img src={currentCoin.image.large} alt="" />
               </div>
             </div>
-            <div className={`col-md-8 ${classes["coin-desc"]}`}>
-              <div
-                className={`${classes["coin-info"]} d-flex justify-content-between`}
-              >
+            <div className={classes["coin-desc"]}>
+              <div className={classes["coin-desc__info"]}>
                 <p>Rank: #{currentCoin.market_cap_rank}</p>
                 <p>
                   24h Change:{" "}
@@ -95,7 +93,9 @@ const CurrencyDetails = () => {
                   </a>
                 </p>
               </div>
-              <p className={classes.desc}>{currentCoin.description.en}</p>
+              <p className={classes["coin-desc__info__bigP"]}>
+                {currentCoin.description.en}
+              </p>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import classes from "./Faq.module.css";
+import classes from "./Faq.module.scss";
 import { useState } from "react";
 
 const faqArray = [
@@ -50,7 +50,7 @@ const Faq = () => {
     <div className={classes.faq} id="FAQ">
       <div className="container">
         <h1>Frequently asked questions</h1>
-        <div className={classes["faq-items"]}>
+        <div className={classes["faq__items"]}>
           {faqArray.map((item, i) => {
             return (
               <div
@@ -59,7 +59,7 @@ const Faq = () => {
                 onClick={accorditionHandler.bind(null, i)}
               >
                 <h4>{item.title}</h4>
-                <div className={classes["faq-icon"]}>
+                <div className={classes["faq-item__icon"]}>
                   {active === i ? (
                     <FontAwesomeIcon icon={faChevronUp} />
                   ) : (

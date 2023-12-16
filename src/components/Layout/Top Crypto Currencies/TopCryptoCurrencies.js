@@ -1,4 +1,4 @@
-import classes from "./TopCryptoCurrencies.module.css";
+import classes from "./TopCryptoCurrencies.module.scss";
 import Spinner from "../../Spinner/Spinner";
 import { Link } from "react-router-dom";
 import useFetchCoins from "../../../hooks/useFetchedCoins";
@@ -14,7 +14,7 @@ const TopCryptoCurrencies = () => {
           <span className={classes["span1"]}>crypto currencies</span> online
         </h1>
         <h2>Most popular crypto right now</h2>
-        <div className={`row ${classes["top-crypto-items"]}`}>
+        <div className={classes["top-crypto-items"]}>
           {loading && !error && <Spinner />}
           {error && (
             <p style={{ textAlign: "center", marginTop: "30px" }}>
@@ -28,7 +28,7 @@ const TopCryptoCurrencies = () => {
                 className={`col-md-3 ${classes["top-crypto-item"]}`}
               >
                 <Link to={`coins/${topCoin.id}`}>
-                  <div className={classes["top-crypto-img"]}>
+                  <div className={classes["top-crypto-item__image"]}>
                     <img src={topCoin.image} alt="" />
                   </div>
                   <h3>

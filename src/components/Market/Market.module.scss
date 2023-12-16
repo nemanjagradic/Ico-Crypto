@@ -1,0 +1,47 @@
+@import "../../variables.scss";
+
+.market {
+  padding: 30px;
+  background: #070046;
+  color: $lightWhite;
+  overflow-x: auto;
+
+  &__content {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
+.market-items-info {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(45deg, #0d0082 0%, #4c0f8d 55%);
+  height: 50px;
+  padding: 0 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  p {
+    flex-basis: 20%;
+    margin-bottom: 0;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  p:first-child {
+    flex-basis: 40%;
+  }
+
+  p:last-child {
+    text-align: right;
+  }
+}
+
+@include media-medium {
+  .market-items-info p {
+    font-size: 16px;
+  }
+  .market__content {
+    width: 600px !important;
+  }
+}

@@ -1,4 +1,4 @@
-import classes from "./Footer.module.css";
+import classes from "./Footer.module.scss";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 
@@ -8,23 +8,18 @@ const Footer = () => {
   };
 
   return (
-    <footer>
-      <div className={classes["footer-img"]}>
+    <footer className={classes.footer}>
+      <div className={classes["footer__img"]}>
         <img src="/img/footer-img.png" alt="" />
       </div>
       <div className="container">
-        <div className="row">
-          <div className="col-md-3">
+        <div className={classes["footer__row"]}>
+          <div>
             <div className={classes["logo-img"]} onClick={scrollToTop}>
               <img src="/img/logo-img.png" alt="" />
             </div>
-            <div className={classes["nav-icons"]}>
-              <i className="fa-brands fa-twitter"></i>
-              <i className="fa-brands fa-instagram"></i>
-              <i className="fa-brands fa-discord"></i>
-            </div>
           </div>
-          <div className="col-md-9">
+          <div>
             <ul className={classes["nav-list"]}>
               <li>
                 <Link to="/" onClick={scrollToTop}>

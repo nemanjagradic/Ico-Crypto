@@ -1,18 +1,18 @@
 import { useCallback, useEffect, useMemo } from "react";
-import classes from "../components/Layout/Main Navigation/MainNavigation.module.css";
+import classes from "../components/Layout/Main Navigation/MainNavigation.module.scss";
 
 const useStickyNav = (targetEl, options) => {
-  const nav = document.querySelector("nav");
+  const nav = document.querySelector(`.${classes.nav}`);
 
   const intersectionCallback = useCallback(
     (entries) => {
       const [entry] = entries;
 
       if (!entry.isIntersecting) {
-        nav.classList.add(classes["sticky"]);
+        nav.classList.add(classes["nav__sticky"]);
         nav.classList.remove("container");
       } else {
-        nav.classList.remove(classes["sticky"]);
+        nav.classList.remove(classes["nav__sticky"]);
         nav.classList.add("container");
       }
     },

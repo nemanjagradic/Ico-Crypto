@@ -1,0 +1,58 @@
+@import "../../../variables.scss";
+
+.faq {
+  padding-top: 100px;
+  background: #070046;
+  color: $lightWhite;
+
+  h1 {
+    text-align: center;
+  }
+
+  &__items {
+    margin-top: 40px;
+    justify-content: center;
+
+    .faq-item {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      padding: 15px 0;
+      border-bottom: 1px solid $lightWhite;
+      transition: all 0.5s;
+      margin: 0 10px;
+
+      h4 {
+        font-size: 22px;
+        font-weight: 500;
+        flex-grow: 1;
+        margin-bottom: 0;
+      }
+
+      &__icon {
+        flex-basis: 5%;
+      }
+
+      p {
+        transition: 0.5s ease-in-out;
+        font-size: 16px;
+        line-height: 20px;
+        overflow: hidden;
+        margin-top: 10px;
+        margin-bottom: 0;
+        height: 0;
+        flex: 95%;
+
+        &.active {
+          height: 40px;
+        }
+      }
+
+      i {
+        float: right;
+        vertical-align: middle;
+      }
+    }
+  }
+}

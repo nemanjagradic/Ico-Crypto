@@ -43,8 +43,7 @@ const MainNavigation = () => {
                 spy={true}
                 smooth={true}
                 offset={-50}
-                delay={250}
-                duration={500}
+                duration={700}
                 className={classes["nav-link"]}
                 onClick={closeNav}
               >
@@ -70,8 +69,7 @@ const MainNavigation = () => {
                     spy={true}
                     smooth={true}
                     offset={-50}
-                    delay={250}
-                    duration={500}
+                    duration={700}
                     className={classes["nav-link"]}
                     onClick={closeNav}
                   >
@@ -101,8 +99,7 @@ const MainNavigation = () => {
                     spy={true}
                     smooth={true}
                     offset={-50}
-                    delay={250}
-                    duration={500}
+                    duration={700}
                     className={classes["nav-link"]}
                   >
                     Home
@@ -124,8 +121,7 @@ const MainNavigation = () => {
                         spy={true}
                         smooth={true}
                         offset={-50}
-                        duration={500}
-                        delay={250}
+                        duration={700}
                         className={classes["nav-link"]}
                         onClick={closeNav}
                       >

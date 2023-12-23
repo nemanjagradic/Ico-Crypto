@@ -15,8 +15,8 @@ const Pagination = ({ totalCoins, numberPerPage, paginate, active }) => {
             to="Market"
             spy={true}
             smooth={true}
-            offset={-100}
-            duration={100}
+            offset={-60}
+            duration={500}
             onClick={paginate.bind(null, number)}
             className={`${classes["pagination__btn"]} ${
               active === number ? classes["pagination__active"] : ""

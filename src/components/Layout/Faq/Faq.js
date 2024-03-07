@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import classes from "./Faq.module.scss";
 import { useState } from "react";
 
@@ -60,11 +60,14 @@ const Faq = () => {
               >
                 <h4>{item.title}</h4>
                 <div className={classes["faq-item__icon"]}>
-                  {active === i ? (
-                    <FontAwesomeIcon icon={faChevronUp} />
-                  ) : (
-                    <FontAwesomeIcon icon={faChevronDown} />
-                  )}
+                  <FontAwesomeIcon
+                    icon={faChevronUp}
+                    className={`${classes["faq-item__icon__arrow"]} ${
+                      active === i
+                        ? classes["faq-item__icon__arrow__active"]
+                        : ""
+                    }`}
+                  />
                 </div>
                 <p className={active === i ? classes.active : ""}>
                   {item.description}

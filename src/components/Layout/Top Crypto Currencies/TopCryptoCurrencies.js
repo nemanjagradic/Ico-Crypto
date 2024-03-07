@@ -23,10 +23,7 @@ const TopCryptoCurrencies = () => {
           )}
           {coins.slice(0, 4).map((topCoin) => {
             return (
-              <div
-                key={topCoin.id}
-                className={`col-md-3 ${classes["top-crypto-item"]}`}
-              >
+              <div key={topCoin.id} className={classes["top-crypto-item"]}>
                 <Link to={`coins/${topCoin.id}`}>
                   <div className={classes["top-crypto-item__image"]}>
                     <img src={topCoin.image} alt="" />
